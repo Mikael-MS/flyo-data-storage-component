@@ -1,0 +1,240 @@
+:root{
+--pale-blue: hsl(243, 100%, 93%);
+--grayish-blue: hsl(229, 7%, 55%);
+--dark-blue: hsl(228, 56%, 26%);
+--very-dark-blue: hsl(229, 57%, 11%);
+--gradient:hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    color: var(--pale-blue);
+    height: 100vh;
+    background: var(--very-dark-blue) url(../images/bg-desktop.png);
+    background-position: bottom;
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 48.5rem;
+    display:flex;
+    align-items: flex-end;
+    column-gap: 2rem;
+    box-sizing: border-box;
+}
+
+.card-logo{
+    width: 34%;
+    padding: 2rem;
+    background-color: var(--dark-blue);
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem 5rem 0.5rem 0.5rem;
+}
+
+.logo{
+    margin-bottom: 1rem;   
+}
+
+.logo img{
+    height: 2rem;
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem; 
+    padding-right: 4rem;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--very-dark-blue);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+}
+
+.icon img{
+    height: 1rem;
+}
+
+
+.card-gb{
+    width: 70%;
+    height: 7rem;
+    background-color: var(--dark-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    border-radius: 0.5rem;
+}
+
+.card-gb h1{
+    font-size: 0.7rem;
+    font-weight: normal;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.card-gb .gb{
+    font-size: 0.7rem;
+    font-weight: bold;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gb-left{
+    background-color: var(--pale-blue);
+    padding: 0.7rem 1.5rem;
+    position: absolute;
+    right: 1.5rem;
+    top: 0;
+    transform: translate(0, -50%);
+    border-radius: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.gb-left .span::after{
+    content: "";
+    display: block;
+    background-color:var(--pale-blue);
+    width: 1.56rem;
+    height: .938rem;
+    position: absolute;
+    right: 0;
+    transform: skew(180deg, 34deg);
+    
+}
+
+.gb-left p{
+    color:var(--grayish-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.6rem;
+    font-weight: bold;
+}
+
+.gb-left strong{
+    font-size: 1.5rem;
+    color: var(--very-dark-blue);
+}
+
+.backgraund{
+    background-color: var(--very-dark-blue);
+    width: 90%;
+    height: 1rem;
+    margin: 0.4rem auto;
+    border-radius: 0.5rem;
+}
+
+.backgraund:before{
+    content: "";
+    display: block;
+    width: 80%;
+    height: 0.7rem;
+    margin: 0.18rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(to right,  hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+   
+}
+
+.sphere{
+    display: block;
+    position: relative;
+}
+
+.sphere::after{
+    content: "";
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--pale-blue);
+    position: absolute;
+    right: 5.375rem;
+    top: -0.75rem;
+    border-radius: 50%;
+}
+
+@media screen and (max-width:780px) {
+
+    body{
+        background-image: url(../images/bg-desktop.png);
+        background-size: cover;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 2rem;
+        width: 21rem;
+    }
+
+    .card-logo{
+        width: 100%;
+    }
+
+    .card-gb{
+        width: 100%;
+    }
+    
+    .sphere::after{
+        content: "";
+        display: block;
+        width: 0.5rem;
+        height: 0.5rem;
+        background-color: var(--pale-blue);
+        position: absolute;
+        right: 3.8rem;
+        top: -0.75rem;
+        border-radius: 50%;
+    }
+}
+
+@media screen and (max-width:375px) {
+
+    body{
+        background-image: url(../images/bg-mobile.png);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .gb-left{
+        border-radius: 0.5rem;
+        transform: translate(-50%, 150%);
+    }
+    .gb-left .span::after{
+        content: none;
+    }
+    .sphere::after{
+        content: "";
+        display: block;
+        width: 0.5rem;
+        height: 0.5rem;
+        background-color: var(--pale-blue);
+        position: absolute;
+        right: 3.8rem;
+        top: -0.75rem;
+        border-radius: 50%;
+    }
+
+    
+}
+
+
