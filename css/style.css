@@ -1,18 +1,21 @@
-:root{
---pale-blue: hsl(243, 100%, 93%);
---grayish-blue: hsl(229, 7%, 55%);
---dark-blue: hsl(228, 56%, 26%);
---very-dark-blue: hsl(229, 57%, 11%);
---gradient:hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+:root {
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+    --left-color:hsl(6, 100%, 80%);
+    --right-color: hsl(335, 100%, 65%);
+    --gradient: linear-gradient(to right, var(--left-color),var(--right-color));
 }
+    
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Raleway', sans-serif;
     color: var(--pale-blue);
     height: 100vh;
@@ -25,15 +28,15 @@ body{
     align-items: center;
 }
 
-.container{
+.container {
     width: 48.5rem;
-    display:flex;
+    display: flex;
     align-items: flex-end;
     column-gap: 2rem;
     box-sizing: border-box;
 }
 
-.card-logo{
+.card-logo {
     width: 34%;
     padding: 2rem;
     background-color: var(--dark-blue);
@@ -42,22 +45,22 @@ body{
     border-radius: 0.5rem 5rem 0.5rem 0.5rem;
 }
 
-.logo{
-    margin-bottom: 1rem;   
+.logo {
+    margin-bottom: 1.5rem;
 }
 
-.logo img{
+.logo img {
     height: 2rem;
 }
 
-.icons{
+.icons {
     display: flex;
     align-items: center;
-    column-gap: 0.5rem; 
+    column-gap: 1rem;
     padding-right: 4rem;
 }
 
-.icon{
+.icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,174 +70,205 @@ body{
     border-radius: 0.5rem;
 }
 
-.icon img{
-    height: 1rem;
+.icon img {
+    height: 1.2rem;
+    margin: 1rem;
 }
 
 
-.card-gb{
+.card-gb {
     width: 70%;
     height: 7rem;
+    padding: 2rem;
     background-color: var(--dark-blue);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    row-gap: 0.5rem;
     position: relative;
     border-radius: 0.5rem;
 }
 
-.card-gb h1{
+.card-gb h1 {
     font-size: 0.7rem;
     font-weight: normal;
-    width: 90%;
-    margin: 0 auto;
 }
 
-.card-gb .gb{
+.card-gb .gb {
     font-size: 0.7rem;
     font-weight: bold;
-    width: 90%;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
 }
 
-.gb-left{
+.gb-left {
     background-color: var(--pale-blue);
     padding: 0.7rem 1.5rem;
     position: absolute;
-    right: 1.5rem;
+    right: 2rem;
     top: 0;
-    transform: translate(0, -50%);
+    transform: translate(0, -70%);
     border-radius: 0.5rem 0.5rem 0 0.5rem;
 }
 
-.gb-left .span::after{
+.gb-left .span::after {
     content: "";
     display: block;
-    background-color:var(--pale-blue);
+    background-color: var(--pale-blue);
     width: 1.56rem;
     height: .938rem;
     position: absolute;
     right: 0;
     transform: skew(180deg, 34deg);
-    
+
 }
 
-.gb-left p{
-    color:var(--grayish-blue);
+.gb-left p {
+    color: var(--grayish-blue);
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     font-size: 0.6rem;
     font-weight: bold;
 }
 
-.gb-left strong{
+.gb-left strong {
     font-size: 1.5rem;
     color: var(--very-dark-blue);
 }
 
-.backgraund{
+.background {
+    display: inline-block;
     background-color: var(--very-dark-blue);
-    width: 90%;
-    height: 1rem;
-    margin: 0.4rem auto;
+    height: 1.1rem;
     border-radius: 0.5rem;
+    position: relative;
 }
 
-.backgraund:before{
+.background:before {
     content: "";
     display: block;
     width: 80%;
     height: 0.7rem;
-    margin: 0.18rem;
+    margin: 0.19rem;
     border-radius: 0.5rem;
-    background: linear-gradient(to right,  hsl(6, 100%, 80%), hsl(335, 100%, 65%));
-   
+    background: var(--gradient)
+
 }
 
-.sphere{
-    display: block;
-    position: relative;
-}
-
-.sphere::after{
+.background::after {
     content: "";
     display: block;
     width: 0.5rem;
     height: 0.5rem;
+    border-radius: 50%;
     background-color: var(--pale-blue);
     position: absolute;
-    right: 5.375rem;
-    top: -0.75rem;
-    border-radius: 50%;
+    right: 20%;
+    top: 0.26rem;
 }
 
-@media screen and (max-width:780px) {
 
-    body{
+@media screen and (max-width:48.75rem) {
+
+    body {
         background-image: url(../images/bg-desktop.png);
         background-size: cover;
     }
 
-    .container{
+    .container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        row-gap: 2rem;
-        width: 21rem;
+        row-gap: 1rem;
     }
 
-    .card-logo{
-        width: 100%;
+    .card-logo {
+        width: 18rem;
     }
 
-    .card-gb{
-        width: 100%;
+    .card-gb {
+        width: 18rem;
+
     }
-    
-    .sphere::after{
-        content: "";
-        display: block;
-        width: 0.5rem;
-        height: 0.5rem;
-        background-color: var(--pale-blue);
-        position: absolute;
-        right: 3.8rem;
-        top: -0.75rem;
-        border-radius: 50%;
+
+
+    .gb-left {
+        right: 27%;
+        top: 110%;
+        border-radius: 0.5rem;
     }
+
+
+    .gb-left .span::after {
+        content: none;
+    }
+
+
+
+
 }
 
-@media screen and (max-width:375px) {
+@media screen and (max-width:23.438rem) {
 
-    body{
+    body {
         background-image: url(../images/bg-mobile.png);
         background-position: center;
         background-size: cover;
     }
 
-    .gb-left{
-        border-radius: 0.5rem;
-        transform: translate(-50%, 150%);
+    .container {
+        width: 90%;
+        row-gap: 1rem;
     }
-    .gb-left .span::after{
+
+    .card-logo {
+        width: 100%;
+        justify-content: center;
+        padding: 2rem 0 2rem 2rem;
+    }
+
+    .logo img {
+        height: 2.7rem;
+    }
+
+    .icons img {
+        height: 1.2em;
+    }
+
+    .icon {
+        border-radius: 0.8rem;
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+
+    .card-gb {
+        justify-content: flex-start;
+        width: 100%;
+        height: 8.5rem;
+        padding: 1.5rem 2.5rem;
+    }
+
+    .gb-title {
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 0.5rem;
+    }
+
+    .gb-title h1 {
+        font-size: 0.8rem;
+    }
+
+    .gb-left strong {
+        font-size: 2rem;
+    }
+
+
+
+    .gb-left .span::after {
         content: none;
     }
-    .sphere::after{
-        content: "";
-        display: block;
-        width: 0.5rem;
-        height: 0.5rem;
-        background-color: var(--pale-blue);
-        position: absolute;
-        right: 3.8rem;
-        top: -0.75rem;
-        border-radius: 50%;
-    }
 
-    
+
 }
-
-
